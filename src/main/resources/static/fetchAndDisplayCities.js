@@ -7,7 +7,6 @@ async function fetchAndDisplayCities() {
 function displayCitiesInTable(cities) {
     const table = document.getElementById('citiesTable');
 
-    // Clear the existing table rows
     while (table.rows.length > 1) {
         table.deleteRow(1);
     }
