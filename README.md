@@ -23,7 +23,7 @@ City, CityParts
 
 2) VIEW:
 
-Views for displaying user-related information, drink menu, and order summary.
+Views for displaying city-related information, cities, and parts of cities.
 Views should render the data from the models in a user-friendly format for the end-users.
 
 3) CONTROLLER:
