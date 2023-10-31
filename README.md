@@ -1,6 +1,8 @@
 ﻿# XMLtoDB_V2
 Javovská aplikace, která stáhne data v xml z internetu, zpracuje je a uloží do sql databáze.
 
+Celá aplikace se ovládá z index.html
+
 # Project structure
 
 Using InteliJ IDEA Ultimate, Spring Framework, GitHub, MySQL Database. 
