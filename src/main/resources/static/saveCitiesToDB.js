@@ -19,24 +19,6 @@ async function fetchAndSaveCities() {
     }
 }
 
-async function sendCityDataToBackend(data) {
-    const url = '/city/saveCities';
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    };
-
-    try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        console.log('Result from backend:', result);
-    } catch (error) {
-        console.error('Error sending data to the backend:', error);
-    }
-}
 async function fetchAndSaveCityParts() {
     const response = await fetch('/20210331_OB_573060_UZSZ.xml');
     const xmlText = await response.text();
@@ -63,6 +45,25 @@ async function fetchAndSaveCityParts() {
     }
 }
 
+async function sendCityDataToBackend(data) {
+    const url = '/city/saveCities';
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log('Result from backend:', result);
+    } catch (error) {
+        console.error('Error sending data to the backend:', error);
+    }
+}
+
 async function sendCityPartsDataToBackend(data) {
     const url = '/cityParts/saveCityParts';
     const options = {
@@ -81,7 +82,9 @@ async function sendCityPartsDataToBackend(data) {
         console.error('Error sending data to the backend:', error);
     }
 }
+
 async function fetchAndSaveData() {
     await fetchAndSaveCities();
     await fetchAndSaveCityParts();
+    document.getElementById('message').innerText = "Data saved to the database successfully.";
 }
